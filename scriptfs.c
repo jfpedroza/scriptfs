@@ -40,6 +40,8 @@
 #include "operations.h"
 #include "procedures.h"
 
+extern struct Persistent persistent;
+
 #define SFS_OPT_KEY(t, u, p)               \
     {t, offsetof(struct options, p), 1}, { \
         u, offsetof(struct options, p), 1  \
@@ -72,8 +74,8 @@ void print_usage(int code) {
     printf(
         "	mirror_folder\n\t\tActual folder on the disk that will be the base "
         "folder of the mounted structure\n");
-    printf(
-        "	mount_point\n\t\tFolder that will be used as the mount point\n");
+    printf("	mount_point\n\t\tFolder that will be used as the mount "
+           "point\n");
     exit(code);
 }
 

@@ -42,8 +42,7 @@ struct Persistent {
     size_t mirror_len;  //!< Length of the mirror string
     int mirror_fd;      //!< File descriptor of the mirror folder
     Procedures *procs;  //!< List of procedures describing what to do with files
-} persistent;  //!< Variable holding all the persistent data needed by the
-               //!< application
+};
 
 /**
  * \brief Data saved about an opened file
@@ -54,8 +53,8 @@ struct Persistent {
  */
 typedef struct FileStruct {
     /**
-     * \brief	Type structure, gives the type of the file or folder on which this
-     * handle is pointing
+     * \brief	Type structure, gives the type of the file or folder on which
+     * this handle is pointing
      */
     enum Type {
         T_FILE,    //!< Regular file
@@ -67,9 +66,9 @@ typedef struct FileStruct {
                        //!< system if the system is a file
     void *dir_handle;  //!< Pointer to the directory flow if the file is
                        //!< actually a directory
-    // int dirfd;	//!< Handle of the directory if the file is a directory. This
-    // handle is kept to close the open directory when it is no longer used, but
-    // it should not be used by the application
+    // int dirfd;	//!< Handle of the directory if the file is a directory.
+    // This handle is kept to close the open directory when it is no longer
+    // used, but it should not be used by the application
     char filename[FILENAME_MAX_LENGTH];  //!< Name of the file
 } FileStruct;
 

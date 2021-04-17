@@ -32,6 +32,15 @@
 /********************************************/
 /*         DATA TYPES AND FUNCTIONS         */
 /********************************************/
+/**
+ * \brief Persistent data
+ *
+ * This structure holds the persistent data needed for the application to be
+ * able to execute scripts properly.
+ */
+struct Persistent persistent;  //!< Variable holding all the persistent data
+                               //!< needed by the application
+
 void init_resources() {
     persistent.mirror = 0;
     persistent.mirror_len = 0;
